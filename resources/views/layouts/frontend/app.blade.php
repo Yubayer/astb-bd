@@ -40,6 +40,10 @@
         <main class="py-4 container">
             @yield('content')
         </main>
+
+        <div class="container">
+        @include('layouts.frontend.partial.footer') 
+        </div>
     </div>
 
     @stack('js')

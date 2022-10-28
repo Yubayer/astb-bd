@@ -13,7 +13,7 @@ class SettingsSeed extends Seeder
     public function run()
     {
         DB::table('settings')->insert([
-            'shop_name'=>"ASTB-BD",
+            'shop_name'=>"আল্লাহরদান শাড়ী এন্ড থ্রীপিস বিতান",
             'shop_logo'=>'astb.png',
             'email'=>'astb707@gmail.com',
             'phone'=>'01717488688',

@@ -133,7 +133,15 @@ class ProductController extends Controller
     }
 
     public function delete(Request $request, $id) {
-        Product::where(['id' => $id])->delete();
+        $product = Product::where(['id' => $id])->first();
+        $images = Images::where('product_id', $id)->get();
+
+        foreach($images as $image){
+            unlink(public_path() .  '/images/product/' . $image->url );
+        }
+
+        $product->delete();
+
         return redirect()->route('admin.product.index');
     }
 }
